@@ -11,7 +11,7 @@ export const createShortUrl = async (req, res) => {
             return res.status(400).json({ error: "Invalid or missing 'url'" });
         }
 
-        const generatedCode = shortcode || Math.random().toString(36).substring(2, 7);
+        const generatedCode = Math.random().toString(36).substring(2, 7) || shortcode;
         const expiryDate = new Date(Date.now() + validity * 60 * 1000).toISOString();
 
         const response = {
