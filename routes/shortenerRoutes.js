@@ -6,4 +6,8 @@ const router = express.Router();
 
 router.post("/shorturls", createShortUrl);
 
+router.get("/hello", (req, res) => {
+    return res.status(200).json({ message: "Hello Dhaya" });
+})
+
 export default router;

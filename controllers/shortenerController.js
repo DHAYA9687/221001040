@@ -15,7 +15,7 @@ export const createShortUrl = async (req, res) => {
         const expiryDate = new Date(Date.now() + validity * 60 * 1000).toISOString();
 
         const response = {
-            shortLink: `https://hostname:port/${generatedCode}`,
+            shortLink: `https://localhost:3000/${generatedCode}`,
             expiry: expiryDate,
         };
 
